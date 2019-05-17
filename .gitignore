@@ -1,0 +1,25 @@
+vars_overwrite
+tmp_RPMBUILD
+results
+
+*_
+*.tgz
+
+*~
+*.autosave
+*.a
+*core
+*.o
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Thumbs.db
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
