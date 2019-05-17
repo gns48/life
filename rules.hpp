@@ -33,6 +33,7 @@ public:
      * @return Cell item in the 'killed' state
      */
     virtual Cell kill(Cell) = 0;
+    virtual Cell kill() = 0;
      /** 
      * born cell item
      * @param Cell 
@@ -79,12 +80,16 @@ public:
         else throw std::logic_error(justBool);           
         return c;   
     }
+    virtual Cell kill() {
+        if constexpr (std::is_same_v<Cell, bool>)
+           return false;
+	else throw std::logic_error(justBool);
+    }
 
     virtual Cell born(Cell c) {
         if constexpr (std::is_same_v<Cell, bool>)
-            c = true;
+           return true;
         else throw std::logic_error(justBool);           
-        return c;
     }
     
     virtual bool is_alive(Cell c) {

@@ -65,7 +65,7 @@ public:
         m_rows(r), m_cols(c), m_rules(rules)
     {
         Cell cl;
-        cl = m_rules->kill(cl);
+        cl = m_rules->kill();
         for(int r = 0; r < m_rows; r++) {
             std::vector<Cell> vc, vn;
             for(int c = 0; c < m_cols; c++) {

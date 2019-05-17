@@ -1,5 +1,5 @@
-CPPFLAGS = -std=c++1z -I.
-LIBS = -lncurses -lstdc++
+CPPFLAGS = -std=c++1z -I. -Wall -pedantic -g
+LIBS = -g -lncurses -lstdc++
 CXX = clang
 
 TARGET = life
@@ -11,8 +11,10 @@ HEADERS = life.hpp rules.hpp world.hpp
 
 all: $(TARGET)
 
-$(TARGET): $(OBJ) $(HEADERS)
+$(TARGET): $(OBJ) 
 	$(CXX) -o $@ $< $(LIBS)
+
+$(OBJ): $(HEADERS)
 
 .o.c:
 	$(CXX) $(CPPFLAGS) $<
